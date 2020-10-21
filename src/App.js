@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Navbar, NavbarBrand } from 'reactstrap';
+import Directory from './components/DirectoryComponent';
 import './App.css';
 
 	class App extends Component {
@@ -11,8 +12,9 @@ import './App.css';
                     <NavbarBrand href="/">NuCamp</NavbarBrand>
                 </div>
                 </Navbar>
+                <Directory />
             </div>
         );
     }
 }
-	export default App;
+	export default App; //there can only be one default export per file
