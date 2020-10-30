@@ -5,37 +5,37 @@ import Header from './HeaderComponent';
 import Footer from './FootComponent';
 import Home from './HeaderComponent';
 import About from './AboutComponent';
-import { Switch, Router, Redirect } from 'react-router-dom';
-import CampsiteInfo from './CampsiteInfoComponent';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
 
-	class Main extends Component {
+
+class Main extends Component {
       constructor(props) {
         super(props);
         this.state = {
           campsites: CAMPSITES,
           comments: COMMENTS,
           partners: PARTNERS,
-          promotion: PROMOTIONs
+          promotion: PROMOTIONS
         };
       }
 
 
     render() {
-
         const HomePage = () => {
             return (
                 <Home />
-            )
+            );
         }
+
         return (
             <div>
                 <Header />
                 <Switch>
                     <Route path='/home' component={HomePage} />
-                    <Route exact path='/directory' render={() => <Directory campsites={this.state.campsites} />} />
+                    <Route exact path='/directory' render={ () => <Directory campsites={this.state.campsites} />} />
                     <Route exact path='/contactus' component={contact}/>
-                    <Route exact path='/aboutus' render= {() => <About partners={this.state.partners} />} />
+                    <Route exact path='/aboutus' render={ () => <About partners={this.state.partners} />} />
                     <Redirect to='/home' />
 
                 </Switch>
@@ -46,4 +46,5 @@ import CampsiteInfo from './CampsiteInfoComponent';
         ); 
     }
 }
-	export default Main; //there can only be one default export per file
+
+export default Main; //there can only be one default export per file

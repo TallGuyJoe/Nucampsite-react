@@ -1,27 +1,26 @@
-import { CAMPSITES } from "../shared/campsites";
 import React from 'react';
 import {
     Card,
     CardImg,
     CardText,
     CardBody,
-    CardTitle,
+    CardTitle
 } from 'reactstrap';
 
 
 function RenderCampsite({campsite}) {
-        return (
-                <div className="col-md-5 m-1">
-                    <Card>
-                        <CardImg top src={campsite.image} alt={campsite.name}/>
-                        <CardBody>
-                            <CardTitle>{campsite.name}</CardTitle>
-                            <CardText>{campsite.description}</CardText>
-                        </CardBody>
-                    </Card>
-                </div>
-        )
-    }
+    return (
+        <div className="col-md-5 m-1">
+            <Card>
+                <CardImg top src={campsite.image} alt={campsite.name}/>
+                <CardBody>
+                    <CardTitle>{campsite.name}</CardTitle>
+                    <CardText>{campsite.description}</CardText>
+                </CardBody>
+            </Card>
+        </div>
+    )
+}
 
 function RenderComments({comments}) {
     if (comments) {
